@@ -104,10 +104,6 @@ a {
   display: none;
 }
 
-.orange {
-  background-color: #f5ae23;
-}
-
 .orange-text {
   color: #f5ae23;
 }
@@ -127,17 +123,17 @@ a {
   background-color: #4a4a4a;
 }
 
-/* TODO: Replace with image later */
-#header {
-  background-color: #484848;
-}
 
 .flex-box {
   display: -webkit-flex;
   display: flex;
   flex-direction: row;
+  -webkit-flex-direction: row;
   flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+/* why space-around??? this leaves ugly rivers  */
   justify-content: space-around;
+  -webkit-justify-content: space-around;
   padding: 10px;
 }
 
@@ -167,6 +163,52 @@ span {
 #lets-connect {
   text-align: center;
 }
+
+
+
+/* header background */
+/* TODO: Replace with image later */
+/*
+#header {
+  background-color: #484848;
+}
+*/
+
+#header {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7d7e7d+0,484848+100 */
+  background: rgb(72,72,72); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(72,72,72,1) 0%, rgba(125,126,125,1) 46%, rgba(125,126,125,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(72,72,72,1)), color-stop(46%,rgba(125,126,125,1)), color-stop(100%,rgba(125,126,125,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(72,72,72,1) 0%,rgba(125,126,125,1) 46%,rgba(125,126,125,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(72,72,72,1) 0%,rgba(125,126,125,1) 46%,rgba(125,126,125,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(72,72,72,1) 0%,rgba(125,126,125,1) 46%,rgba(125,126,125,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(72,72,72,1) 0%,rgba(125,126,125,1) 46%,rgba(125,126,125,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#484848', endColorstr='#7d7e7d',GradientType=0 ); /* IE6-9 */
+}
+
+
+/* footer background */
+
+/*
+.orange {
+  background-color: #f5ae23;
+}
+*/
+
+.orange {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#efbb62+0,f5ae23+100 */
+  background: rgb(239,187,98); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgb(239,187,98) 0%, rgb(245,174,35) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(239,187,98)), color-stop(100%,rgb(245,174,35))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgb(239,187,98) 0%,rgb(245,174,35) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgb(239,187,98) 0%,rgb(245,174,35) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgb(239,187,98) 0%,rgb(245,174,35) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgb(239,187,98) 0%,rgb(245,174,35) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efbb62', endColorstr='#f5ae23',GradientType=0 ); /* IE6-9 */
+}
+
+
+
 
 /* Media queries to handle various device widths */
 

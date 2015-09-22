@@ -1,9 +1,14 @@
-// TODO: make a minimal passing project
-// TODO: make Google Maps better, open only one infowindow at a time!
+// TODO: make Google Maps better, open only one infowindow at a time!  ??? abandonded
+// TODO: sharper and more responsive images
+// TODO: a better favicon, mobile-ready
+// TODO: project part: shows an image, and on focus, the details 
+// and link shows on the page
 // TODO: do something with d3.js
-// TODO: stylings
-// TODO: make the contents better
+// TODO: interactive menu bar
+// TODO: stylings, with new skills
 // TODO: return to original on second click of internationalize
+
+
 var bio = {
 	"name": "Yay Wang",
 	"role": "Javascript Ninja",
@@ -12,12 +17,11 @@ var bio = {
 		"email": "wangyegp@gmail.com",
 		"twitter": "@wangyegp",
 		"github": "yexwang",
-		"location": "Bangkok"
+		"location": "Ho Chi Minh City"
 	}, // you must add a coma
-	"bioPic": "images/me.jpg",
-	"welcomeMsg": "Hey, welcome. All the information on this place is really true. I'm\
- working to be the best Javascript developer in the world",
-	"skills": ["Javascript", "HTML", "CSS", "Swift", "Python", "Driving", "Scuba Diving", 
+	"bioPic": "images/images_src/fixed/me.jpg",
+	"welcomeMsg": "Hey, welcome. I'm working to be the best Javascript developer in the world!!!",
+	"skills": ["Javascript", "HTML", "CSS", "Swift", "Python", "Data Analysis", "Driving", "Scuba Diving", 
 		"Fencing", "Copywriting","Filmmaking", "Awesomeness", "Coolness"] // no coma here
 };
 
@@ -54,12 +58,12 @@ var education = {
 	"schools":
 [{
 	"name": "UC Berkeley",
-	"degree": "BA Not Yet Completed",
+	"degree": "BA not yet completed",
 	"dates": 2014,
 	"location": "Berkeley, CA",
 	"url": "http://www.berkeley.edu",
 // !!! you got to add http:// here for the link to work
-	"majors": ["Undeclared"]
+	"majors": ["Undeclared","Rocket Sciencex"]
 }],
 	"onlineCourses":
 [{
@@ -68,6 +72,11 @@ var education = {
 	"dates": 2015,
 	"url": "https://www.udacity.com/course/\
 front-end-web-developer-nanodegree--nd001"
+},{
+	"title": "Full-stack Developer Nanodegree",
+	"school": "Udacity",
+	"dates": 2015,
+	"url": "https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004"
 }]
 };
 
@@ -120,12 +129,12 @@ education.display = function() {
 var work = {
 	jobs:
 [{
-	"employer": "Big Bomb Rocket Institue",
+	"employer": "Big Bang Rocket Institue",
 	"title": "Aerospace Engineer",
 	"location": "Beijing",
 	"dates": "Nov 2014 - Sept 2015",
 	"description":"This was my very first engineering job. I successfully helped\
- my company launched our new space shuttle to the Mars!",
+ my company launch our new space shuttle to the Mars!",
 //	"images": ["images/workingBeijing1.jpg",
 //			    "images/workingBeijing2.jpg"]
 },{
@@ -135,6 +144,12 @@ var work = {
 	"dates": "Nov 2015 - Jan 2016",
 	"description": "I independently worked on various challenging JS projects.",
 //	"images": ["images/workingBangkok1.png", "images/workingBangkok2.png"]
+},{
+	"employer": "Self-employed",
+	"title": "Programmer",
+	"location": "Istanbul",
+	"dates": "Feb 2016 - Mar 2016",
+	"description": "I worked on harder and more complex web development projects"
 }]};
 
 work.display = function() {
@@ -158,13 +173,13 @@ var projects = {
 	"title" : "Resume Project",
 	"dates" : "Sept 15 2015 - Sept 17 2015",
 	"description": "My first student project on Udacity platform",
-	"images": ["images/udacityProject1.jpg", "images/udacityProject2.jpg"]
+	"images": ["images/udacityProject1.png", "images/udacityProject2.png"]
 }, {
 	"title": "Imagined Project 1",
 	"dates": "Sept 17 2015 - Sept 18 2015",
 	"description": "This will happen in near future",
 	"images": ["images/imaginedProject1.jpg"]
-}, {
+},{
 	"title": "Imagined Project 2",
 	"dates": "Sept 19 2015 - Sept 21 2015",
 	"description": "This will happen next. This will!",
@@ -202,6 +217,13 @@ projects.display();
 
 $("#mapDiv").append(googleMap);
 
+
+// Style manipulation code:
+//$(".#projects").css("background", "black");
+$(".project-entry img").css("border-radius", "2px");
+$(".project-entry img").css("border", "3px solid #5E6B71");
+$(".project-entry img").css("margin", "5px");
+
 /*
 var inName = function(name) {
 	var nameArray = name.trim().split(" ");
@@ -211,4 +233,5 @@ var inName = function(name) {
 };
 $("#main").append(internationalizeButton);
 */
+
 
