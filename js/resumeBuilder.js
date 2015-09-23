@@ -63,7 +63,7 @@ var education = {
 	"location": "Berkeley, CA",
 	"url": "http://www.berkeley.edu",
 // !!! you got to add http:// here for the link to work
-	"majors": ["Undeclared","Rocket Sciencex"]
+	"majors": ["Undeclared","Rocket Science"]
 }],
 	"onlineCourses":
 [{
