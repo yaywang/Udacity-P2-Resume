@@ -1,4 +1,4 @@
-/* ??? validator results for lines 262 and 276, the IE6 gradient code. Yet to know why */
+/* ??? validator shows errors at lines 262 and 276, the IE6 gradient code. Yet to know why */
 
 /* -------------------------------- 
 
@@ -27,8 +27,6 @@ h6 {
   margin:0;
   font-family: "Roboto", sans-serif;
 }
-
-
 
 h1 {
   font-size: 40px;
@@ -226,6 +224,7 @@ Main Components
 
 #map {
   display: block;
+  height: -webkit-calc(100% - 60px);
   height: calc(100% - 60px);
   margin: 0 5%;
 }
@@ -579,6 +578,8 @@ nav {
 
 /* Media queries to handle various device widths */
 
+
+/* there's no longer any need to change lets-connect's margin, because I used calc for map.
 /*
 @media only screen and (max-width: 1024px) {
   #lets-connect {

@@ -53,7 +53,7 @@ bio.display = function() {
 			$("#skills").append(formattedSkills);
 		}
 	}
-}
+};
 
 
 var education = {
@@ -88,7 +88,7 @@ front-end-web-developer-nanodegree--nd001"
 };
 
 education.display = function() {
-	for (school in education.schools) {
+	for (var school in education.schools) {
 		$("#education").append(HTMLschoolStart);
 
 		var formattedSchoolName = HTMLschoolName.replace("%data%", 
@@ -103,7 +103,7 @@ education.display = function() {
 		$(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree,
 			formattedSchoolDates, formattedSchoolLocation);
 
-		for (major in education.schools[school].majors) {
+		for (var major in education.schools[school].majors) {
 			var formattedSchoolMajor = HTMLschoolMajor.replace("%data%",
 				education.schools[school].majors[major]);
 			$(".education-entry:last").append(formattedSchoolMajor);
@@ -111,7 +111,7 @@ education.display = function() {
 	}
 
 	$("#education").append(HTMLonlineClasses);
-	for (course in education.onlineCourses) {
+	for (var course in education.onlineCourses) {
 		$("#education").append(HTMLschoolStart);
 
 		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%",
@@ -123,12 +123,12 @@ education.display = function() {
 			education.onlineCourses[course].dates);
 		var formattedOnlineUrl = HTMLonlineURL.replace("%data%",
 			education.onlineCourses[course].url).replace("#",
-			education.onlineCourses[course].url);;
+			education.onlineCourses[course].url);
 
 		$(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool,
 			formattedOnlineDates, formattedOnlineUrl);
 	}
-}
+};
 
 
 // ??? why on earth we want the jobs array inside another object. 
@@ -170,7 +170,7 @@ var work = {
 }]};
 
 work.display = function() {
-	for (job in work.jobs) {
+	for (var job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
 		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
@@ -181,7 +181,7 @@ work.display = function() {
 		$(".work-entry:last").append(formattedEmployer + formattedTitle,
 			formattedLocation, formattedDates, formattedDescription);
 	}
-}
+};
 
 
 var projects = {
@@ -210,7 +210,7 @@ var projects = {
 }]};
 
 projects.display = function() {
-	for (project in projects.projects) {
+	for (var project in projects.projects) {
 		$("#projects").append(HTMLprojectStart);
 
 		var formattedTitle = HTMLprojectTitle.replace("%data%",
@@ -223,13 +223,13 @@ projects.display = function() {
 		$(".project-entry:last").append(formattedTitle, formattedDates,
 			formattedDescription);
 		
-		for (image in projects.projects[project].images) {
+		for (var image in projects.projects[project].images) {
 			var formattedImages = HTMLprojectImage.replace("%data%",
 			projects.projects[project].images[image]);
 			$(".project-entry:last").append(formattedImages);
 		}
 	}
-}
+};
 
 
 bio.display();

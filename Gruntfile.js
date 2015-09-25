@@ -19,7 +19,7 @@ module.exports = function(grunt) {
             */
             /* width:"400px",
             */
-            height: "230px",
+            height: '230px',
             quality: 60
             
           }],
@@ -67,6 +67,37 @@ module.exports = function(grunt) {
       },
     },
 
+    /* JS linter */
+    jshint: { 
+      options: {
+        curly: true,
+        eqeqeq: true,
+        eqnull: true,
+        browser: true,
+        globals: {
+          jQuery: true
+        },
+        ignores: ['js/jQuery.js', 'js/modernizr.js' ,'js/html-inspector.js']      
+      },
+      src: {
+        src: 'js/*.js'
+      }
+    },
+
+    /* CSS linter */
+    csslint: {
+      src: {
+        src: 'css/*.css'
+      }
+    },
+
+    /* HTML inspector */
+    'html-inspector': {
+      all: {
+        src: '*.html'
+      }
+    },
+
     /* watch for all ths changes */
     watch: {
       scripts:{
@@ -76,7 +107,9 @@ module.exports = function(grunt) {
           spawn: false,
         },
       }
-    }
+    },
+
+
   });
   
   grunt.loadNpmTasks('grunt-responsive-images');
@@ -84,9 +117,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-mkdir');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-jshint')
-  grunt.loadNpmTasks('grunt-contrib-csslint')
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-csslint');
+  grunt.loadNpmTasks('grunt-html-inspector');
   grunt.registerTask('images', ['clean', 'mkdir', 'copy', 'responsive_images']);
-  grunt.registerTask('lint', ['jshint', 'csslint'])
-
+  grunt.registerTask('lint', ['jshint', 'csslint', 'html-inspector'])
 };
