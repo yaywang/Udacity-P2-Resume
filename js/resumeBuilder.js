@@ -16,7 +16,7 @@ var bio = {
 		"mobile": "1 (619)-9406106",
 		"email": "wangyegp@gmail.com",
 		"twitter": "@wangyegp",
-		"github": "yexwang",
+		"github": "yaywang",
 		"location": "Ho Chi Minh City"
 	}, // you must add a coma
 	"bioPic": "images/images_src/fixed/me.jpg",
