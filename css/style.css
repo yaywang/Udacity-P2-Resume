@@ -1,4 +1,7 @@
 /* ??? validator shows errors at lines 262 and 276, the IE6 gradient code. Yet to know why */
+/* TODO: span was used to create both as children of li and in the nav. Those are two classes
+         sort this out.
+*/
 
 /* --------------------------------
 
@@ -6,14 +9,16 @@ Primary style
 
 --------------------------------  */
 
-*{
+body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 body,
 div,
+section,
 ul,
 li,
 p,
@@ -25,7 +30,10 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: "Roboto", sans-serif;
+}
+
+section {
+  padding: 4% 15% 4% 5%;
 }
 
 h1 {
@@ -35,18 +43,17 @@ h1 {
   display: inline;
 }
 
+/* h2s are section headers */
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: white;
   line-height: 29px;
-  padding: 10px;
 }
 
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000;
   line-height: 22px;
 }
 
@@ -76,7 +83,7 @@ span {
 }
 
 a {
-  color: #a8f6fa;
+  color: #effeff;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -85,12 +92,6 @@ a {
 
 a:hover {
   color: black;
-}
-
-img {
-  padding: 10px;
-  width: 100%;
-  margin: auto;
 }
 
 ul {
@@ -123,12 +124,6 @@ Modules
 
 .center-content {
   padding: 2.5% 15% 2.5% 5%;
-}
-
-.content-div {
-  padding-top: 4%;
-  padding-right: 15%;
-  padding-bottom: 4%;
 }
 
 /* text types */
@@ -174,24 +169,27 @@ Main Components
 
 --------------------------------  */
 
+/*
 .education-entry,
 .work-entry,
 .project-entry {
   padding: 0 5%;
 }
+*/
 
 .project-entry {
-  display: inline-block;
-  width: 50%;
+  width: 40%;
   height: 40%;
 }
 
-.project-entry img {
+.project-img {
   padding: 5px 0 0 0;
+  width: 100%;
 }
 
 .education-entry {
   padding-bottom: 15px;
+  color: white;  /* to correct the two ems */
 }
 
 .education-entry a {
@@ -218,6 +216,13 @@ Main Components
   display: none;
 }
 
+
+.coursesh3 {
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 0;
+}
+
 #lets-connect {
   text-align: center;
 }
@@ -226,16 +231,18 @@ Main Components
   display: block;
   height: -webkit-calc(100% - 60px);
   height: calc(100% - 60px);
-  margin: 0 5%;
 }
 
 #mapHeader {
   height: 60px;
 }
 
+.map-header-h2 {
+  color: #999;
+}
+
 #mapDiv {
   height: 400px;
-  width: 100%;
 }
 
 /*
@@ -256,7 +263,6 @@ Main Components
 
 .red {
   background-color: rgb(255, 78, 80);
-  color: white;
 }
 
 /*
@@ -264,20 +270,16 @@ Main Components
   color: rgb(177, 186, 250);
 }
 */
+
+/* since there
 .yellow h2,
 .blue h2,
 .red h2 {
   color: white;
 }
+*/
 
-.red h3,
-.blue h3 {
-  color: white;
-  padding-top: 20px;
-  padding-bottom: 0px;
-}
-
-#header {
+.grey-gradient {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7d7e7d+0,484848+100 */
   background: rgb(72,72,72); /* Old browsers */
   background: -moz-linear-gradient(top,  rgba(72,72,72,1) 0%, rgba(125,126,125,1) 46%, rgba(125,126,125,1) 100%); /* FF3.6+ */
@@ -290,7 +292,7 @@ Main Components
 }
 
 
-.orange {
+.orange-gradient {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#efbb62+0,f5ae23+100 */
   background: rgb(239,187,98); /* Old browsers */
   background: -moz-linear-gradient(top,  rgb(239,187,98) 0%, rgb(245,174,35) 100%); /* FF3.6+ */
@@ -409,7 +411,7 @@ nav {
 }
 .no-touch #vertical-nav .label {
   position: relative;
-  top: 5px;
+  top: 10px;
   margin-right: 10px;
   padding: .4em .5em;
 /*  color: white;*/
@@ -563,7 +565,7 @@ nav {
   -ms-transform: rotate(135deg);
   -o-transform: rotate(135deg);
   transform: rotate(135deg);
-  bottom: 3px;
+  bottom: 5px;
 }
 .touch #vertical-nav li:last-child a {
   border-bottom: none;
@@ -572,6 +574,13 @@ nav {
 @media only screen and (min-width: 768px) {
   .touch .nav-trigger, .touch #vertical-nav {
     bottom: 58px;
+  }
+}
+
+
+@media only screen and (max-width: 750px) {
+  .no-touch #vertical-nav .label {
+    display: none;
   }
 }
 
