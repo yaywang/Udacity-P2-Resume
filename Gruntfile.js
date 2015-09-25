@@ -17,7 +17,8 @@ module.exports = function(grunt) {
             /*
             Change these:
             */
-            width:"400px",
+            /* width:"400px",
+            */
             height: "230px",
             quality: 60
             
@@ -83,6 +84,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-mkdir');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.registerTask('default', ['clean', 'mkdir', 'copy', 'responsive_images','watch']);
+  grunt.loadNpmTasks('grunt-contrib-jshint')
+  grunt.loadNpmTasks('grunt-contrib-csslint')
+  grunt.registerTask('images', ['clean', 'mkdir', 'copy', 'responsive_images']);
+  grunt.registerTask('lint', ['jshint', 'csslint'])
 
 };

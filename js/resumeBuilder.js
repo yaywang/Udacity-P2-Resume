@@ -4,10 +4,10 @@
 // TODO: project part: shows an image, and on focus, the details 
 // and link shows on the page
 // TODO: do something with d3.js
-// TODO: interactive menu bar
 // TODO: stylings, with new skills
 // TODO: return to original on second click of internationalize
-
+// TODO: mapping issue on small screens
+// no js thing on html tag
 
 var bio = {
 	"name": "Yay Wang",
@@ -21,8 +21,9 @@ var bio = {
 	}, // you must add a coma
 	"bioPic": "images/images_src/fixed/me.jpg",
 	"welcomeMsg": "Hey, welcome. I'm working to be the best Javascript developer in the world!!!",
-	"skills": ["Javascript", "HTML", "CSS", "Swift", "Python", "Data Analysis", "Driving", "Scuba Diving", 
-		"Fencing", "Copywriting","Filmmaking", "Awesomeness", "Coolness"] // no coma here
+	"skills": ["Javascript", "HTML", "CSS", "Web Design", "Swift", "Python", "Data Analysis", "Event Organization",
+	"Coffee Tasting", "Driving", "Scuba Diving", "Fencing", "Copywriting", "Photography", "Filmmaking",
+	 "Awesomeness", "Coolness"] // no coma here
 };
 
 bio.display = function() {
@@ -54,6 +55,7 @@ bio.display = function() {
 	}
 }
 
+
 var education = {
 	"schools":
 [{
@@ -77,6 +79,11 @@ front-end-web-developer-nanodegree--nd001"
 	"school": "Udacity",
 	"dates": 2015,
 	"url": "https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004"
+},{
+	"title": "Data Analyst Nanodegree",
+	"school": "Udacity",
+	"dates": 2015,
+	"url": "https://www.udacity.com/course/data-analyst-nanodegree--nd002"
 }]
 };
 
@@ -123,33 +130,43 @@ education.display = function() {
 	}
 }
 
+
 // ??? why on earth we want the jobs array inside another object. 
 // ??? why not simply a display method
-// now I know, you want to have a d
+// now I know
 var work = {
 	jobs:
 [{
-	"employer": "Big Bang Rocket Institue",
+	"employer": "Big Bang Rocket Institute",
 	"title": "Aerospace Engineer",
 	"location": "Beijing",
-	"dates": "Nov 2014 - Sept 2015",
+	"dates": "Nov 2014 - July 2015",
 	"description":"This was my very first engineering job. I successfully helped\
- my company launch our new space shuttle to the Mars!",
-//	"images": ["images/workingBeijing1.jpg",
-//			    "images/workingBeijing2.jpg"]
+ my company launch our new space shuttle to the Mars!"
+},{
+	"employer": "Big Bang Rocket Institute Guangzhou",
+	"title": "Programmer",
+	"location": "Guangzhou",
+	"dates": "Aug 2015 - Aug 2016",
+	"description": "I made programs to prepare our big rocket launching event!"
 },{
 	"employer": "Self-employed",
 	"title": "Programmer",
 	"location": "Bangkok",
 	"dates": "Nov 2015 - Jan 2016",
-	"description": "I independently worked on various challenging JS projects.",
-//	"images": ["images/workingBangkok1.png", "images/workingBangkok2.png"]
+	"description": "I independently worked on various challenging JS projects."
 },{
 	"employer": "Self-employed",
 	"title": "Programmer",
 	"location": "Istanbul",
 	"dates": "Feb 2016 - Mar 2016",
-	"description": "I worked on harder and more complex web development projects"
+	"description": "I worked on harder and more complex web development projects!!!"
+},{
+	"employer": "Self-employed",
+	"title": "Programmer",
+	"location": "Prague",
+	"dates": "Apr 2016 - July 2016",
+	"description": "I made significant achievements in making large cutting-edge projects!"
 }]};
 
 work.display = function() {
@@ -171,18 +188,24 @@ var projects = {
 	"projects":
 [{
 	"title" : "Resume Project",
-	"dates" : "Sept 15 2015 - Sept 17 2015",
-	"description": "My first student project on Udacity platform",
-	"images": ["images/udacityProject1.png", "images/udacityProject2.png"]
-}, {
+	"dates" : "Sept 15 2015 - Sept 24 2015",
+	"description": "My first student project on the Udacity platform. I spent 90% of time studying and\
+ implementing new features in the design.",
+	"images": ["images/udacityProject1.png"/*, "images/udacityProject2.png"*/]
+},{
+	"title" : "About Me Project",
+	"dates" : "Sept 19 2015 - Sept 20 2015",
+	"description": "This simple project was the first one I delivered on the Udacity platform.",
+	"images": ["images/udacityProject0.png"]
+},{
 	"title": "Imagined Project 1",
-	"dates": "Sept 17 2015 - Sept 18 2015",
-	"description": "This will happen in near future",
+	"dates": "Sept  2015 - Sept 18 2015",
+	"description": "This will happen in near future.",
 	"images": ["images/imaginedProject1.jpg"]
 },{
 	"title": "Imagined Project 2",
 	"dates": "Sept 19 2015 - Sept 21 2015",
-	"description": "This will happen next. This will!",
+	"description": "Like Imagined Project 1, this will happen in near future. This will!",
 	"images": ["images/imaginedProject2.jpg"]
 }]};
 
@@ -215,14 +238,20 @@ work.display();
 projects.display();
 
 
+/*
+$("#mapHeader").append("<p>I honed my programming skills in coworking spaces around the world.\
+ Everywhere I stop, \
+ network with young technology entrepreneurs and programmers in each of those locations.</p>")
+*/
 $("#mapDiv").append(googleMap);
 
-
+/* Merged into css file
 // Style manipulation code:
 //$(".#projects").css("background", "black");
 $(".project-entry img").css("border-radius", "2px");
 $(".project-entry img").css("border", "3px solid #5E6B71");
 $(".project-entry img").css("margin", "5px");
+*/
 
 /*
 var inName = function(name) {
@@ -233,5 +262,4 @@ var inName = function(name) {
 };
 $("#main").append(internationalizeButton);
 */
-
 

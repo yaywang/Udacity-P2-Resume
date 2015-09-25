@@ -1,3 +1,17 @@
+/* ??? validator results for lines 262 and 276, the IE6 gradient code. Yet to know why */
+
+/* -------------------------------- 
+
+Primary style
+
+--------------------------------  */
+
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body,
 div,
 ul,
@@ -14,15 +28,7 @@ h6 {
   font-family: "Roboto", sans-serif;
 }
 
-.clear-fix {
-  overflow: auto;
-}
 
-.education-entry,
-.work-entry,
-.project-entry {
-  padding: 0 5%;
-}
 
 h1 {
   font-size: 40px;
@@ -61,64 +67,47 @@ h5 {
 
 }
 
-.date-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: left;
-}
-
-.location-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: right;
-}
-
 p {
   font-size: 14px;
   color: #333;
   line-height: 21px;
 }
 
+span {
+  padding: 5px;
+}
+
 a {
-  color: #1199c3;
+  color: #E8F6FA;
   text-decoration: none;
   margin-top: 10px;
   display: block;
-}
-
-.welcome-message {
-  font-style: italic;
-  font-size: 18px;
-  color: #f3f3f3;
-  line-height: 28px;
-}
-
-#skills-h3 {
-  color: #f5ae23;
-  display: none;
-}
-
-.orange-text {
-  color: #f5ae23;
-}
-
-.white-text {
   font-weight: bold;
-  color: #fff;
 }
 
-.gray {
-  background-color: #f3f3f3;
-  padding-bottom: 10px;
-  clear:both;
+a:hover {
+  color: black;
+}
+ 
+img {
+  padding: 10px;
+  width: 100%;
+  margin: auto;
 }
 
-.dark-gray {
-  background-color: #4a4a4a;
+ul {
+  list-style-type: none;
+}
+
+/* -------------------------------- 
+
+Modules
+
+--------------------------------  */
+
+/*  layout */
+.clear-fix {
+  overflow: auto;
 }
 
 .flex-box {
@@ -135,12 +124,94 @@ a {
 }
 
 .center-content {
-  padding: 2.5% 5%;
+  padding: 2.5% 15% 2.5% 5%;
 }
 
-ul {
-  list-style-type: none;
+.content-div {
+  padding-top: 4%;
+  padding-right: 15%;
+  padding-bottom: 4%;
 }
+
+/* text types */
+.date-text {
+  font-style: italic;
+  font-size: 14px;
+  color: white;
+  line-height: 16px;
+  float: left;
+}
+
+.location-text {
+  font-style: italic;
+  font-size: 14px;
+  color: white;
+  line-height: 16px;
+  float: right;
+}
+
+.orange-text {
+  color: #f5ae23;
+}
+
+.white-text {
+  font-weight: bold;
+  color: #fff;
+}
+
+/* backgrounds */
+.gray {
+  background-color: #f3f3f3;
+  padding-bottom: 10px;
+  clear:both;
+}
+
+.dark-gray {
+  background-color: #4a4a4a;
+}
+
+/* -------------------------------- 
+
+Main Components
+
+--------------------------------  */
+
+.education-entry,
+.work-entry,
+.project-entry {
+  padding: 0 5%;
+}
+
+.project-entry {
+  display: inline-block;
+  width: 50%;
+  height: 40%;
+}
+
+.project-entry img {
+  padding: 5px 0 0 0;
+}
+
+.education-entry {
+  padding-bottom: 15px;
+}
+
+.education-entry a {
+  margin-top: 0;
+}
+
+.welcome-message {
+  font-style: italic;
+  font-size: 18px;
+  color: #f3f3f3;
+  line-height: 28px;
+}
+
+#skills-h3 {
+  color: #f5ae23;
+  display: none;
+}
+
 
 .biopic {
   float: left;
@@ -149,32 +220,64 @@ ul {
   display: none;
 }
 
-img {
-  padding: 10px;
-}
-
-span {
-  padding: 5px;
-}
-
 #lets-connect {
   text-align: center;
 }
 
 #map {
   display: block;
-  height: 100%;
+  height: calc(100% - 60px);
   margin: 0 5%;
+}
+
+#mapHeader {
+  height: 60px;
 }
 
 #mapDiv {
   height: 400px;
   width: 100%;
-  padding-bottom: 5%;
 }
 
+/*
+#mapDiv p {
+  padding: 10px 5%;
+}
+*/
 
-/* gradients */
+/* background color */
+  
+.blue {
+  background-color: rgb(105, 210, 231);
+}
+
+.yellow {
+  background-color: rgb(249, 212, 35)
+}
+
+.red {
+  background-color: rgb(255, 78, 80);
+  color: white;
+}
+
+/*
+.red a {
+  color: rgb(177, 186, 250);
+}
+*/
+.yellow h2,
+.blue h2,
+.red h2 {
+  color: white;
+}
+
+.red h3,
+.blue h3 {
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 0px;
+}
+
 #header {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7d7e7d+0,484848+100 */
   background: rgb(72,72,72); /* Old browsers */
@@ -201,35 +304,288 @@ span {
 }
 
 
-/* Nav-bar */
+/* -------------------------------- 
+
+Navigation
+
+--------------------------------  */
+
+/* Old Trial 
 .container {
   width: 100%;
 }
 
-.nav-bar {
+nav {
   width: 10%;
   display: inline-block;
 }
 
 .content {
   width: 90%;
-  display: inline-block;
+  height: 100vh;
   float: right;
+  overflow: scroll;
 }
 
 .nav-tab {
   width: 100%;
   background-color: #F7E7C6;
 }
+*/
+
+/* !!! design recipe learned from http://codyhouse.co/demo/vertical-fixed-navigation/index.html */
+#vertical-nav a {
+  color: black;
+}
+
+/* No Touch */
+.nav-trigger {
+  display: none;
+}
+
+.no-touch #vertical-nav {
+  position: fixed;
+  right: 3%;
+  top: 30%;
+  bottom: auto;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.no-touch #vertical-nav li {
+  text-align: right;
+}
+.no-touch #vertical-nav a {
+  display: inline-block;
+  /* prevent weird movements on hover when you use a CSS3 transformation - webkit browsers */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.no-touch #vertical-nav a:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.no-touch #vertical-nav a span {
+  float: right;
+  display: inline-block;
+  -webkit-transform: scale(0.6);
+  -moz-transform: scale(0.6);
+  -ms-transform: scale(0.6);
+  -o-transform: scale(0.6);
+  transform: scale(0.6);
+}
+.no-touch #vertical-nav a:hover span {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+.no-touch #vertical-nav a:hover .label {
+  opacity: 1;
+}
+.no-touch #vertical-nav a.is-selected .dot {
+  background-color: white;
+}
+.no-touch #vertical-nav .dot {
+  position: relative;
+  /* we set a top value in order to align the dot with the label. If you change label's font, you may need to change this top value*/
+  top: 8px;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: #d88683;
+  -webkit-transition: -webkit-transform 0.2s, background-color 0.5s;
+  -moz-transition: -moz-transform 0.2s, background-color 0.5s;
+  transition: transform 0.2s, background-color 0.5s;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+.no-touch #vertical-nav .label {
+  position: relative;
+  top: 5px;
+  margin-right: 10px;
+  padding: .4em .5em;
+/*  color: white;*/
+  font-size: 14px;
+  font-size: 0.875rem;
+  -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+  -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
+  opacity: 0;
+  -webkit-transform-origin: 100% 50%;
+  -moz-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  -o-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .no-touch .label {
+    display: none;
+  }
+}
+
+
+/* Touch devices */
+.touch .content-div {
+  padding-right: inherit;
+}
+
+.touch .center-content {
+  padding-right: 5%;
+}
+
+.touch span {
+  padding: 3px;
+}
+
+.touch .nav-trigger {
+  display: block;
+  z-index: 2;
+  position: fixed;
+  bottom: 30px;
+  right: 5%;
+  height: 44px;
+  width: 44px;
+  border-radius: 0.25em;
+  background: rgba(255, 255, 255, 0.9);
+}
+.touch .nav-trigger span {
+  position: absolute;
+  height: 2px;
+  width: 2px;
+  background-color: #3e3947;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+.touch .nav-trigger span::before, .touch .nav-trigger span::after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  background-color: inherit;
+  border-radius: inherit;
+}
+.touch .nav-trigger span::before {
+  top: -9px;
+}
+.touch .nav-trigger span::after {
+  bottom: -9px;
+}
+
+.touch #vertical-nav {
+  position: fixed;
+  z-index: 1;
+  right: 5%;
+  bottom: 40px;
+  width: 90%;
+  max-width: 400px;
+  max-height: 90%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform-origin: right bottom;
+  -moz-transform-origin: right bottom;
+  -ms-transform-origin: right bottom;
+  -o-transform-origin: right bottom;
+  transform-origin: right bottom;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  border-radius: 0.25em;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.touch #vertical-nav a {
+  display: block;
+  padding: 1em;
+  border-bottom: 1px solid rgba(62, 57, 71, 0.1);
+}
+.touch #vertical-nav a span:first-child {
+  display: none;
+}
+.touch #vertical-nav a.is-selected span:last-child {
+  color: #d88683;
+}
+.touch #vertical-nav.open {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+.touch #vertical-nav.open + .nav-trigger {
+  background-color: transparent;
+}
+.touch #vertical-nav.open + .nav-trigger span {
+  background-color: rgba(62, 57, 71, 0);
+}
+.touch #vertical-nav.open + .nav-trigger span::before, .touch #vertical-nav.open + .nav-trigger span::after {
+  background-color: #3e3947;
+  height: 3px;
+  width: 20px;
+  border-radius: 0;
+  left: -8px;
+}
+.touch #vertical-nav.open + .nav-trigger span::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 0;
+}
+.touch #vertical-nav.open + .nav-trigger span::after {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+  bottom: 3px;
+}
+.touch #vertical-nav li:last-child a {
+  border-bottom: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .touch .nav-trigger, .touch #vertical-nav {
+    bottom: 58px;
+  }
+}
 
 
 /* Media queries to handle various device widths */
 
+/*
 @media only screen and (max-width: 1024px) {
   #lets-connect {
     margin-top: 5%;
   }
 }
+*/
 
 @media only screen and (max-width:900px) {
   .biopic {
@@ -238,14 +594,20 @@ span {
 }
 
 @media only screen and (max-width: 750px) {
+  /*
   #lets-connect {
     margin-top: 10%;
   }
+  */
   .biopic {
     width: 150px;
   }
   .welcome-message {
     display: none;
+  }
+
+  .project-entry {
+    width: 100%;
   }
 }
 
