@@ -21,7 +21,7 @@ jQuery(document).ready(function($){
     //open-close navigation on touch devices
     $('.touch .nav-trigger').on('click', function(){
     	$('.touch #vertical-nav').toggleClass('open');
-  
+
     });
     //close navigation on touch devices when selecting an element from the list
     $('.touch #vertical-nav a').on('click', function(){

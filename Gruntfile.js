@@ -21,7 +21,7 @@ module.exports = function(grunt) {
             */
             height: '230px',
             quality: 60
-            
+
           }],
           //?sample: true,
           rename: false
@@ -68,7 +68,7 @@ module.exports = function(grunt) {
     },
 
     /* JS linter */
-    jshint: { 
+    jshint: {
       options: {
         curly: true,
         eqeqeq: true,
@@ -77,7 +77,7 @@ module.exports = function(grunt) {
         globals: {
           jQuery: true
         },
-        ignores: ['js/jQuery.js', 'js/modernizr.js' ,'js/html-inspector.js']      
+        ignores: ['js/jQuery.js', 'js/modernizr.js' ,'js/html-inspector.js']
       },
       src: {
         src: 'js/*.js'
@@ -111,7 +111,7 @@ module.exports = function(grunt) {
 
 
   });
-  
+
   grunt.loadNpmTasks('grunt-responsive-images');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');

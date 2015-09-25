@@ -1,13 +1,13 @@
 // TODO: make Google Maps better, open only one infowindow at a time!  ??? abandonded
 // TODO: sharper and more responsive images
-// TODO: a better favicon, mobile-ready
-// TODO: project part: shows an image, and on focus, the details 
+// TODO: a sharper favicon
+// TODO: project part: shows an image, and on focus, the details
 // and link shows on the page
 // TODO: do something with d3.js
-// TODO: stylings, with new skills
 // TODO: return to original on second click of internationalize
 // TODO: mapping issue on small screens
-// no js thing on html tag
+// TODO:
+// TODO: no js thing on html tag
 
 var bio = {
 	"name": "Yay Wang",
@@ -21,31 +21,31 @@ var bio = {
 	}, // you must add a coma
 	"bioPic": "images/images_src/fixed/me.jpg",
 	"welcomeMsg": "Hey, welcome. I'm working to be the best Javascript developer in the world!!!",
-	"skills": ["Javascript", "HTML", "CSS", "Web Design", "Swift", "Python", "Data Analysis", "Event Organization",
-	"Coffee Tasting", "Driving", "Scuba Diving", "Fencing", "Copywriting", "Photography", "Filmmaking",
-	 "Awesomeness", "Coolness"] // no coma here
+	"skills": ["Javascript", "HTML", "CSS", "Web Design", "Swift", "Python", "Data Analysis",
+	"Event Organization", "Coffee Tasting", "Driving", "Scuba Diving", "Fencing", "Copywriting",
+	"Photography", "Filmmaking", "Awesomeness", "Coolness"] // no coma here
 };
 
 bio.display = function() {
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
 	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 	$("#header").prepend(formattedName, formattedRole);
-	 
+
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
 	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-	$("#topContacts").append(formattedMobile, formattedEmail, formattedTwitter, 
+	$("#topContacts").append(formattedMobile, formattedEmail, formattedTwitter,
 							formattedGithub, formattedLocation);
-	$("#footerContacts").append(formattedMobile, formattedEmail, formattedTwitter, 
+	$("#footerContacts").append(formattedMobile, formattedEmail, formattedTwitter,
 							formattedGithub, formattedLocation);
 
 	var formattedBiopic = HTMLbioPic.replace("%data%", bio.bioPic);
 	var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
 	$("#header").append(formattedBiopic, formattedWelcomeMsg);
 
-	// ??? this doesn't actually work. if 
+	// ??? this doesn't actually work. if
 	if (bio.skills.length > 0) {
 		$("#header").append(HTMLskillsStart);
 		for (i = 0; i < bio.skills.length; i++) {
@@ -72,8 +72,7 @@ var education = {
 	"title": "Front-End Developer Nanodgree",
 	"school": "Udacity",
 	"dates": 2015,
-	"url": "https://www.udacity.com/course/\
-front-end-web-developer-nanodegree--nd001"
+	"url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
 },{
 	"title": "Full-stack Developer Nanodegree",
 	"school": "Udacity",
@@ -91,7 +90,7 @@ education.display = function() {
 	for (var school in education.schools) {
 		$("#education").append(HTMLschoolStart);
 
-		var formattedSchoolName = HTMLschoolName.replace("%data%", 
+		var formattedSchoolName = HTMLschoolName.replace("%data%",
 			education.schools[school].name).replace("#",
 			education.schools[school].url);
 		var formattedSchoolDegree = HTMLschoolDegree.replace("%data%",
@@ -131,7 +130,7 @@ education.display = function() {
 };
 
 
-// ??? why on earth we want the jobs array inside another object. 
+// ??? why on earth we want the jobs array inside another object.
 // ??? why not simply a display method
 // now I know
 var work = {
@@ -141,8 +140,8 @@ var work = {
 	"title": "Aerospace Engineer",
 	"location": "Beijing",
 	"dates": "Nov 2014 - July 2015",
-	"description":"This was my very first engineering job. I successfully helped\
- my company launch our new space shuttle to the Mars!"
+	"description":"This was my very first engineering job. I successfully helped" +
+ 					" my company launch our new space shuttle to the Mars!"
 },{
 	"employer": "Big Bang Rocket Institute Guangzhou",
 	"title": "Programmer",
@@ -189,9 +188,9 @@ var projects = {
 [{
 	"title" : "Resume Project",
 	"dates" : "Sept 15 2015 - Sept 24 2015",
-	"description": "My first student project on the Udacity platform. I spent 90% of time studying and\
- implementing new features in the design.",
-	"images": ["images/udacityProject1.png"/*, "images/udacityProject2.png"*/]
+	"description": "My first student project on the Udacity platform. I spent 90% of time studying and" +
+    				" implementing new features in the design.",
+	"images": ["images/udacityProject1.png"]
 },{
 	"title" : "About Me Project",
 	"dates" : "Sept 19 2015 - Sept 20 2015",
@@ -215,14 +214,14 @@ projects.display = function() {
 
 		var formattedTitle = HTMLprojectTitle.replace("%data%",
 			projects.projects[project].title);
-		var formattedDates = HTMLprojectDates.replace("%data%", 
+		var formattedDates = HTMLprojectDates.replace("%data%",
 			projects.projects[project].dates);
 		var formattedDescription = HTMLprojectDescription.replace("%data%",
 			projects.projects[project].description);
 
 		$(".project-entry:last").append(formattedTitle, formattedDates,
 			formattedDescription);
-		
+
 		for (var image in projects.projects[project].images) {
 			var formattedImages = HTMLprojectImage.replace("%data%",
 			projects.projects[project].images[image]);
@@ -256,7 +255,7 @@ $(".project-entry img").css("margin", "5px");
 /*
 var inName = function(name) {
 	var nameArray = name.trim().split(" ");
-	var inName = nameArray[0][0].toUpperCase() + nameArray[0].slice(1).toLowerCase() 
+	var inName = nameArray[0][0].toUpperCase() + nameArray[0].slice(1).toLowerCase()
 				+ " " + nameArray[1].toUpperCase();
 	return inName;
 };

@@ -1,6 +1,6 @@
 /* ??? validator shows errors at lines 262 and 276, the IE6 gradient code. Yet to know why */
 
-/* -------------------------------- 
+/* --------------------------------
 
 Primary style
 
@@ -76,7 +76,7 @@ span {
 }
 
 a {
-  color: #E8F6FA;
+  color: #a8f6fa;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -86,7 +86,7 @@ a {
 a:hover {
   color: black;
 }
- 
+
 img {
   padding: 10px;
   width: 100%;
@@ -97,7 +97,7 @@ ul {
   list-style-type: none;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Modules
 
@@ -168,7 +168,7 @@ Modules
   background-color: #4a4a4a;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Main Components
 
@@ -245,7 +245,7 @@ Main Components
 */
 
 /* background color */
-  
+
 .blue {
   background-color: rgb(105, 210, 231);
 }
@@ -303,13 +303,13 @@ Main Components
 }
 
 
-/* -------------------------------- 
+/* --------------------------------
 
 Navigation
 
 --------------------------------  */
 
-/* Old Trial 
+/* Old Trial
 .container {
   width: 100%;
 }
