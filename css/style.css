@@ -1,8 +1,3 @@
-/* ??? validator shows errors at lines 262 and 276, the IE6 gradient code. Yet to know why */
-/* TODO: span was used to create both as children of li and in the nav. Those are two classes
-         sort this out.
-*/
-
 /* --------------------------------
 
 Primary style
@@ -43,7 +38,7 @@ h1 {
   display: inline;
 }
 
-/* h2s are section headers */
+/* h2s are used as section headers */
 h2 {
   font-weight: bold;
   font-size: 24px;
@@ -69,17 +64,12 @@ h3,
 h4,
 h5 {
   padding:10px 5%;
-
 }
 
 p {
   font-size: 14px;
   color: #333;
   line-height: 21px;
-}
-
-span {
-  padding: 5px;
 }
 
 a {
@@ -96,6 +86,11 @@ a:hover {
 
 ul {
   list-style-type: none;
+}
+
+/* for content only; this is overridden in nav setion */
+span {
+  padding: 5px;
 }
 
 /* --------------------------------
@@ -169,14 +164,6 @@ Main Components
 
 --------------------------------  */
 
-/*
-.education-entry,
-.work-entry,
-.project-entry {
-  padding: 0 5%;
-}
-*/
-
 .project-entry {
   width: 40%;
   height: 40%;
@@ -189,7 +176,8 @@ Main Components
 
 .education-entry {
   padding-bottom: 15px;
-  color: white;  /* to correct the two ems */
+   /* for the two ems not defined in Primary style */
+  color: white;
 }
 
 .education-entry a {
@@ -203,11 +191,9 @@ Main Components
   line-height: 28px;
 }
 
-#skills-h3 {
+.skills-h3 {
   color: #f5ae23;
-  display: none;
 }
-
 
 .biopic {
   float: left;
@@ -216,8 +202,7 @@ Main Components
   display: none;
 }
 
-
-.coursesh3 {
+.courses-h3 {
   color: white;
   padding-top: 20px;
   padding-bottom: 0;
@@ -237,7 +222,7 @@ Main Components
   height: 60px;
 }
 
-.map-header-h2 {
+.mapHeader-h2 {
   color: #999;
 }
 
@@ -245,14 +230,7 @@ Main Components
   height: 400px;
 }
 
-/*
-#mapDiv p {
-  padding: 10px 5%;
-}
-*/
-
-/* background color */
-
+/* background colors */
 .blue {
   background-color: rgb(105, 210, 231);
 }
@@ -264,20 +242,6 @@ Main Components
 .red {
   background-color: rgb(255, 78, 80);
 }
-
-/*
-.red a {
-  color: rgb(177, 186, 250);
-}
-*/
-
-/* since there
-.yellow h2,
-.blue h2,
-.red h2 {
-  color: white;
-}
-*/
 
 .grey-gradient {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7d7e7d+0,484848+100 */
@@ -311,30 +275,7 @@ Navigation
 
 --------------------------------  */
 
-/* Old Trial
-.container {
-  width: 100%;
-}
-
-nav {
-  width: 10%;
-  display: inline-block;
-}
-
-.content {
-  width: 90%;
-  height: 100vh;
-  float: right;
-  overflow: scroll;
-}
-
-.nav-tab {
-  width: 100%;
-  background-color: #F7E7C6;
-}
-*/
-
-/* !!! design recipe learned from http://codyhouse.co/demo/vertical-fixed-navigation/index.html */
+/* design recipe from http://codyhouse.co/demo/vertical-fixed-navigation/index.html */
 #vertical-nav a {
   color: black;
 }
@@ -356,20 +297,24 @@ nav {
   transform: translateY(-50%);
   z-index: 1;
 }
+
 .no-touch #vertical-nav li {
   text-align: right;
 }
+
 .no-touch #vertical-nav a {
   display: inline-block;
   /* prevent weird movements on hover when you use a CSS3 transformation - webkit browsers */
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+
 .no-touch #vertical-nav a:after {
   content: "";
   display: table;
   clear: both;
 }
+
 .no-touch #vertical-nav a span {
   float: right;
   display: inline-block;
@@ -379,6 +324,7 @@ nav {
   -o-transform: scale(0.6);
   transform: scale(0.6);
 }
+
 .no-touch #vertical-nav a:hover span {
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
@@ -386,12 +332,15 @@ nav {
   -o-transform: scale(1);
   transform: scale(1);
 }
+
 .no-touch #vertical-nav a:hover .label {
   opacity: 1;
 }
+
 .no-touch #vertical-nav a.is-selected .dot {
   background-color: white;
 }
+
 .no-touch #vertical-nav .dot {
   position: relative;
   /* we set a top value in order to align the dot with the label. If you change label's font, you may need to change this top value*/
@@ -409,6 +358,7 @@ nav {
   -o-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
 }
+
 .no-touch #vertical-nav .label {
   position: relative;
   top: 10px;
@@ -459,6 +409,7 @@ nav {
   border-radius: 0.25em;
   background: rgba(255, 255, 255, 0.9);
 }
+
 .touch .nav-trigger span {
   position: absolute;
   height: 2px;
@@ -475,6 +426,7 @@ nav {
   -o-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 }
+
 .touch .nav-trigger span::before, .touch .nav-trigger span::after {
   content: '';
   height: 100%;
@@ -484,9 +436,11 @@ nav {
   background-color: inherit;
   border-radius: inherit;
 }
+
 .touch .nav-trigger span::before {
   top: -9px;
 }
+
 .touch .nav-trigger span::after {
   bottom: -9px;
 }
@@ -520,17 +474,21 @@ nav {
   border-radius: 0.25em;
   background-color: rgba(255, 255, 255, 0.9);
 }
+
 .touch #vertical-nav a {
   display: block;
   padding: 1em;
   border-bottom: 1px solid rgba(62, 57, 71, 0.1);
 }
+
 .touch #vertical-nav a span:first-child {
   display: none;
 }
+
 .touch #vertical-nav a.is-selected span:last-child {
   color: #d88683;
 }
+
 .touch #vertical-nav.open {
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
@@ -538,12 +496,15 @@ nav {
   -o-transform: scale(1);
   transform: scale(1);
 }
+
 .touch #vertical-nav.open + .nav-trigger {
   background-color: transparent;
 }
+
 .touch #vertical-nav.open + .nav-trigger span {
   background-color: rgba(62, 57, 71, 0);
 }
+
 .touch #vertical-nav.open + .nav-trigger span::before, .touch #vertical-nav.open + .nav-trigger span::after {
   background-color: #3e3947;
   height: 3px;
@@ -551,6 +512,7 @@ nav {
   border-radius: 0;
   left: -8px;
 }
+
 .touch #vertical-nav.open + .nav-trigger span::before {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -559,6 +521,7 @@ nav {
   transform: rotate(45deg);
   top: 0;
 }
+
 .touch #vertical-nav.open + .nav-trigger span::after {
   -webkit-transform: rotate(135deg);
   -moz-transform: rotate(135deg);
@@ -567,6 +530,7 @@ nav {
   transform: rotate(135deg);
   bottom: 5px;
 }
+
 .touch #vertical-nav li:last-child a {
   border-bottom: none;
 }
@@ -577,7 +541,6 @@ nav {
   }
 }
 
-
 @media only screen and (max-width: 750px) {
   .no-touch #vertical-nav .label {
     display: none;
@@ -587,8 +550,7 @@ nav {
 
 /* Media queries to handle various device widths */
 
-
-/* there's no longer any need to change lets-connect's margin, because I used calc for map.
+/* there's no longer any need to change lets-connect's margin, because calc was used for map.
 /*
 @media only screen and (max-width: 1024px) {
   #lets-connect {
@@ -604,11 +566,6 @@ nav {
 }
 
 @media only screen and (max-width: 750px) {
-  /*
-  #lets-connect {
-    margin-top: 10%;
-  }
-  */
   .biopic {
     width: 150px;
   }

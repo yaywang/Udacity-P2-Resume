@@ -6,7 +6,6 @@
 // TODO: do something with d3.js
 // TODO: return to original on second click of internationalize
 // TODO: mapping issue on small screens
-// TODO:
 // TODO: no js thing on html tag
 
 var bio = {
@@ -45,7 +44,6 @@ bio.display = function() {
 	var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
 	$("#header").append(formattedBiopic, formattedWelcomeMsg);
 
-	// ??? this doesn't actually work. if
 	if (bio.skills.length > 0) {
 		$("#header").append(HTMLskillsStart);
 		for (i = 0; i < bio.skills.length; i++) {
@@ -131,8 +129,7 @@ education.display = function() {
 
 
 // ??? why on earth we want the jobs array inside another object.
-// ??? why not simply a display method
-// now I know
+// now I know, for encapsulation
 var work = {
 	jobs:
 [{
@@ -141,37 +138,43 @@ var work = {
 	"location": "Beijing",
 	"dates": "Nov 2014 - July 2015",
 	"description":"This was my very first engineering job. I successfully helped" +
- 					" my company launch our new space shuttle to the Mars!"
+ 					" my company launch our new space shuttle to the Mars!",
+ 	"url": "https://github.com/yaywang"
 },{
 	"employer": "Big Bang Rocket Institute Guangzhou",
 	"title": "Programmer",
 	"location": "Guangzhou",
 	"dates": "Aug 2015 - Aug 2016",
-	"description": "I made programs to prepare our big rocket launching event!"
+	"description": "I made programs to prepare our big rocket launching event!",
+	"url": "https://github.com/yaywang"
 },{
 	"employer": "Self-employed",
 	"title": "Programmer",
 	"location": "Bangkok",
 	"dates": "Nov 2015 - Jan 2016",
-	"description": "I independently worked on various challenging JS projects."
+	"description": "I independently worked on various challenging JS projects.",
+	"url": "https://github.com/yaywang"
 },{
 	"employer": "Self-employed",
 	"title": "Programmer",
 	"location": "Istanbul",
 	"dates": "Feb 2016 - Mar 2016",
-	"description": "I worked on harder and more complex web development projects!!!"
+	"description": "I worked on harder and more complex web development projects!!!",
+	"url": "https://github.com/yaywang"
 },{
 	"employer": "Self-employed",
 	"title": "Programmer",
 	"location": "Prague",
 	"dates": "Apr 2016 - July 2016",
-	"description": "I made significant achievements in making large cutting-edge projects!"
+	"description": "I made significant achievements in making large cutting-edge projects!",
+	"url": "https://github.com/yaywang"
 }]};
 
 work.display = function() {
 	for (var job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
-		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedEmployer = HTMLworkEmployer.replace("#", work.jobs[job].url).replace("%data%",
+			work.jobs[job].employer);
 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
 		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
@@ -190,29 +193,33 @@ var projects = {
 	"dates" : "Sept 15 2015 - Sept 24 2015",
 	"description": "My first student project on the Udacity platform. I spent 90% of time studying and" +
     				" implementing new features in the design.",
-	"images": ["images/udacityProject1.png"]
+	"images": ["images/udacityProject1.png"],
+	"url": "https://github.com/yaywang/Udacity-P2-Resume"
 },{
 	"title" : "About Me Project",
 	"dates" : "Sept 19 2015 - Sept 20 2015",
 	"description": "This simple project was the first one I delivered on the Udacity platform.",
-	"images": ["images/udacityProject0.png"]
+	"images": ["images/udacityProject0.png"],
+	"url": "https://github.com/yaywang/Udacity-P0-About-Me"
 },{
 	"title": "Imagined Project 1",
 	"dates": "Sept  2015 - Sept 18 2015",
 	"description": "This will happen in near future.",
-	"images": ["images/imaginedProject1.jpg"]
+	"images": ["images/imaginedProject1.jpg"],
+	"url": "https://github.com/yaywang?tab=repositories"
 },{
 	"title": "Imagined Project 2",
 	"dates": "Sept 19 2015 - Sept 21 2015",
 	"description": "Like Imagined Project 1, this will happen in near future. This will!",
-	"images": ["images/imaginedProject2.jpg"]
+	"images": ["images/imaginedProject2.jpg"],
+	"url": "https://github.com/yaywang?tab=repositories"
 }]};
 
 projects.display = function() {
 	for (var project in projects.projects) {
 		$("#projects").append(HTMLprojectStart);
 
-		var formattedTitle = HTMLprojectTitle.replace("%data%",
+		var formattedTitle = HTMLprojectTitle.replace("#", projects.projects[project].url).replace("%data%",
 			projects.projects[project].title);
 		var formattedDates = HTMLprojectDates.replace("%data%",
 			projects.projects[project].dates);
@@ -236,12 +243,6 @@ education.display();
 work.display();
 projects.display();
 
-
-/*
-$("#mapHeader").append("<p>I honed my programming skills in coworking spaces around the world.\
- Everywhere I stop, \
- network with young technology entrepreneurs and programmers in each of those locations.</p>")
-*/
 $("#mapDiv").append(googleMap);
 
 /* Merged into css file
