@@ -1,3 +1,5 @@
+// this code was from http://codyhouse.co/demo/vertical-fixed-navigation/index.html, with minor modifications
+
 jQuery(document).ready(function($){
 	var contentSections = $('.section'),
 		navigationItems = $('#vertical-nav a');

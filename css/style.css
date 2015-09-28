@@ -230,7 +230,7 @@ Main Components
   height: 400px;
 }
 
-/* background colors */
+/* background colors, colors from navnav.co */
 .blue {
   background-color: rgb(105, 210, 231);
 }
@@ -275,7 +275,7 @@ Navigation
 
 --------------------------------  */
 
-/* design recipe from http://codyhouse.co/demo/vertical-fixed-navigation/index.html */
+/* code template from http://codyhouse.co/demo/vertical-fixed-navigation/index.html */
 #vertical-nav a {
   color: black;
 }
